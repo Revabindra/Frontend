@@ -101,32 +101,32 @@ var getname3=function(){
 }
 
 
-var x=1;      
-a();           // a will be pushed into the call stack and 10 will be on console 
-b();           // b will be there on console 
-console.log(x);  // then 1 will print
+// var x=1;      
+// a();           // a will be pushed into the call stack and 10 will be on console 
+// b();           // b will be there on console 
+// console.log(x);  // then 1 will print
 
-function a(){
+// function a(){
     
-    var x=10;
+//     var x=10;
 
-    console.log(x);
-}
-function b(){
-    var x=100;
-    console.log(x);
-}
+//     console.log(x);
+// }
+// function b(){
+//     var x=100;
+//     console.log(x);
+// }
 
 //shortest js program - no code (window)
 
-var a=10;         //global space outside function
-function c(){
-    var b=10;
-}
-console.log(a);
+// var a=10;         //global space outside function
+// function c(){
+//     var b=10;
+// }
+//console.log(a);
 //onsole.log(b);    // not defined
 //console.log(window.a);
-console.log(this.a);  
+//console.log(this.a);  
 
 
 // function x(){
@@ -176,8 +176,8 @@ console.log(this.a);
 // d(); // if we want access inside it we can but outside the function expression it will definately show the error
 
 //parameters and arguments
-function x(a,b,c){}  //a,b,c parameters  these labels/identifiers those get this values from arguments
-x(1,2,3); //arguments values passed inside the function 
+// function x(a,b,c){}  //a,b,c parameters  these labels/identifiers those get this values from arguments
+// x(1,2,3); //arguments values passed inside the function 
 
 // first class function   function inside function as arguments
 //  var b=function(param1){
@@ -188,7 +188,9 @@ x(1,2,3); //arguments values passed inside the function
 //  console.log(b());
 
 
-//closures
+//closures -------------------------------------------------
+
+
 
 // function outer(){
 //     //var a=10;
@@ -216,3 +218,72 @@ x(1,2,3); //arguments values passed inside the function
 // });
 
 // x y timer
+
+
+function fun(){
+    var a=10;
+    function foo(){
+        a++;
+        console.log(a);
+    }
+    return foo
+}
+let f=fun()
+let f2=fun()
+console.log(f);
+f()
+f2()
+
+function cl(){
+let store=[]
+//console.log(store[67]);
+return function mul(a){
+
+    if(store[a]){
+        console.log("memo")
+        return store[a];
+    }
+    console.log("not memo");
+    let result=a*5;
+    store[a]=result
+    return result
+}
+}
+let mul=cl()
+console.log(mul(4));
+
+
+//closures - when function is declared , it binds itself with lexical scope 
+
+
+//currying function - those function which takes only one argument at a time 
+//it reduces the chances of error 
+
+function sum(a){
+    return function(b){
+        return function(c){
+            return a+b+c
+        }
+    }
+}
+console.log(sum(1)(2)(3));
+
+
+  let res1=setTimeout(delay ,1000);
+  let res2=setInterval(delay ,2000);
+
+  //microtasking - when we use promise it is called microtasking
+ 
+  //event loop - it is a mechanism to execute the function in a particular order
+   //callback function - to execute function in a particular order 
+  /// work1(work2){
+  //  ......
+  // work1 complete
+  //  work2()
+  // }
+  //to run multiple asynchronous task synchronously we use callback function
+  //callback function is a function that is passed as an argument to another function
+  //callbackhell - when we use callback function in a function and that function is called multiple times then it is called
+  //nesting of callbacks and code is not readable
+  //promises to solve the problem of callback hell
+  
