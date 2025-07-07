@@ -1,3 +1,5 @@
+// 7 july object,promises, api  
+
 //object - multiple data types can be used 
 let user=[{
     name:"John",
