@@ -206,10 +206,25 @@
 //     });
 
 
-async function apiData(){
-    const data=await fetch('https://dummyjson.com/users');
-    const myData=await data.json();
-    console.log(myData);
-    console.log(data);
+// async function apiData(){
+//     const data=await fetch('https://dummyjson.com/users');
+//     const myData=await data.json();
+//     console.log(myData);
+//     console.log(data);
+// }
+// apiData()
+
+// call()
+
+function assign(){
+    console.log(`student name:${this.studentName} from batch :${this.batchNo}`)
 }
-apiData()
+
+const student1={
+    studentName:"ravneet",
+    batchNo:23
+}
+assign.call(student1);
+assign.apply(student1);
+const data1=assign.bind(student1);
+console.log(data1);
