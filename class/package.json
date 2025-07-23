@@ -1,0 +1,22 @@
+{
+  "name": "g6-package",
+  "version": "1.0.3",
+  "description": "my first package npm ",
+  "main": "21july.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Revabindra/Frontend.git#main"
+  },
+  "author": "ravneet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Revabindra/Frontend/issues"
+  },
+  "homepage": "https://github.com/Revabindra/Frontend/tree/main#readme",
+  "dependencies": {
+    "@changesets/cli": "^2.29.5"
+  }
+}
